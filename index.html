@@ -203,12 +203,15 @@
                     method: 'POST',
                     body: new FormData(form),
                 })
-                // tampilkan tombol kirim, hilangkan tombol loading
                 .then((response) => {
+                    // tampilkan tombol kirim, hilangkan tombol loading
                     btnLoading.classList.toggle('d-none');
                     btnKirim.classList.toggle('d-none');
                     // tambilkan alert
                     myAlert.classList.toggle('d-none');
+                    // Reset Form
+                    form.reset();
+
                     console.log('Success!', response);
                 })
                 .catch((error) => console.error('Error!', error.message));
